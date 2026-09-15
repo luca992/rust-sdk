@@ -2,7 +2,7 @@
 /// We expect this to be passed in as a JSON-encoded, then base64-encoded string within a X-Stamp-Webauthn header
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct WebAuthnStamp {
     pub credential_id: ::prost::alloc::string::String,
     pub client_data_json: ::prost::alloc::string::String,

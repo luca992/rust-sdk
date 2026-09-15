@@ -2,7 +2,7 @@
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct MerkleNode {
     #[serde(default)]
     #[serde_as(as = "serde_with::DisplayFromStr")]
@@ -17,7 +17,7 @@ pub struct MerkleNode {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct MerkleRootPayload {
     #[serde(default)]
     pub node: ::core::option::Option<MerkleNode>,
@@ -28,7 +28,7 @@ pub struct MerkleRootPayload {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct MerkleRoot {
     #[serde(default)]
     pub payload: ::core::option::Option<MerkleRootPayload>,
@@ -40,7 +40,7 @@ pub struct MerkleRoot {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct MerkleLeafPayload {
     #[serde(default)]
     pub node: ::core::option::Option<MerkleNode>,
@@ -55,7 +55,7 @@ pub struct MerkleLeafPayload {
 /// The purpose of this is to make the `MerkleLeafPayload.timestamp` immutable, so that it can be used by the Ump to verify the relative age of leaf and notarization.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct MerkleLeaf {
     #[serde(default)]
     pub payload: ::core::option::Option<MerkleLeafPayload>,
@@ -78,7 +78,7 @@ pub struct MerkleProof {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct MerkleLeafNotarization {
     #[serde(default)]
     pub leaf: ::core::option::Option<MerkleLeaf>,
@@ -91,7 +91,7 @@ pub struct MerkleLeafNotarization {
 /// All signatures created using this version must continue to verify using only these fields.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AccountPayloadV0 {
     pub organization_id: ::prost::alloc::string::String,
     pub wallet_id: ::prost::alloc::string::String,
@@ -106,7 +106,7 @@ pub struct AccountPayloadV0 {
 /// This broke compatibility with signatures generated using V0, so we retain both versions.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AccountPayloadV1 {
     pub organization_id: ::prost::alloc::string::String,
     pub wallet_id: ::prost::alloc::string::String,
@@ -124,7 +124,7 @@ pub struct AccountPayloadV1 {
 /// Older versions (V0, V1) are still supported for signature verification fallback.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AccountPayloadV2 {
     pub organization_id: ::prost::alloc::string::String,
     pub wallet_id: ::prost::alloc::string::String,
@@ -144,7 +144,7 @@ pub struct AccountPayloadV2 {
 /// Signature is created over the digest of the payload message.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Account {
     #[serde(default)]
     pub payload: ::core::option::Option<AccountPayloadV2>,
@@ -156,7 +156,7 @@ pub struct Account {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct NotarizationPayload {
     /// Hash of the organization data
     pub organization_digest: ::prost::alloc::string::String,
@@ -175,7 +175,7 @@ pub struct NotarizationPayload {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Notarization {
     #[serde(default)]
     pub payload: ::core::option::Option<NotarizationPayload>,
@@ -199,7 +199,7 @@ pub struct NotarizedOrganization {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Signature {
     pub scheme: SignatureScheme,
     pub public_key: ::prost::alloc::string::String,
@@ -209,7 +209,7 @@ pub struct Signature {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SmartContractInterfacePayload {
     pub smart_contract_interface_id: ::prost::alloc::string::String,
     pub organization_id: ::prost::alloc::string::String,
@@ -224,7 +224,7 @@ pub struct SmartContractInterfacePayload {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SmartContractInterface {
     #[serde(default)]
     pub payload: ::core::option::Option<SmartContractInterfacePayload>,
@@ -235,7 +235,7 @@ pub struct SmartContractInterface {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct PolicyBudgetOverride {
     #[serde(default)]
     pub max_recursion_depth: u32,
@@ -247,7 +247,7 @@ pub struct PolicyBudgetOverride {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct PolicyEvaluationMetrics {
     #[serde(default)]
     pub max_recursion_depth_reached: u32,
@@ -311,7 +311,7 @@ pub struct SecretPayloadV1 {
 /// "ephemeral key layer" for ingress encryption.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct IngressTargetKeyPayloadV1 {
     /// UUID for this key
     pub ingress_target_key_id: ::prost::alloc::string::String,
@@ -352,7 +352,7 @@ pub struct IngressTargetKeyPayloadV1 {
 /// Type to represent arbitrary key-value pairs evaluated in the policy engine.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct KeyValue {
     /// Policy visible property name.
     pub key: ::prost::alloc::string::String,
@@ -362,7 +362,7 @@ pub struct KeyValue {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SessionProfilePayload {
     pub id: ::prost::alloc::string::String,
     pub name: ::prost::alloc::string::String,
@@ -376,7 +376,7 @@ pub struct SessionProfilePayload {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SignedSessionProfile {
     #[serde(default)]
     pub payload: ::core::option::Option<SessionProfilePayload>,

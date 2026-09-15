@@ -1,7 +1,7 @@
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ActivateBillingTierIntent {
     /// @inject_tag: validate:"required"
     pub product_id: ::prost::alloc::string::String,
@@ -11,14 +11,14 @@ pub struct ActivateBillingTierIntent {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ActivateBillingTierResult {
     pub product_id: ::prost::alloc::string::String,
 }
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeletePaymentMethodIntent {
     #[serde(default)]
     pub payment_method_id: ::core::option::Option<::prost::alloc::string::String>,
@@ -26,14 +26,14 @@ pub struct DeletePaymentMethodIntent {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeletePaymentMethodResult {
     pub payment_method_id: ::prost::alloc::string::String,
 }
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SetPaymentMethodIntent {
     /// @inject_tag: validate:"required,max=16,numeric"
     pub number: ::prost::alloc::string::String,
@@ -51,7 +51,7 @@ pub struct SetPaymentMethodIntent {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SetPaymentMethodIntentV2 {
     /// @inject_tag: validate:"required,max=256"
     pub payment_method_id: ::prost::alloc::string::String,
@@ -63,7 +63,7 @@ pub struct SetPaymentMethodIntentV2 {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SetPaymentMethodResult {
     pub last_four: ::prost::alloc::string::String,
     pub card_holder_name: ::prost::alloc::string::String,
@@ -72,7 +72,7 @@ pub struct SetPaymentMethodResult {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdatePaymentMethodIntent {
     /// @inject_tag: validate:"required,email,tk_email"
     pub payment_email: ::prost::alloc::string::String,
@@ -80,7 +80,7 @@ pub struct UpdatePaymentMethodIntent {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdatePaymentMethodResult {
     pub payment_email: ::prost::alloc::string::String,
 }

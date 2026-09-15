@@ -1,7 +1,7 @@
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Timestamp {
     pub seconds: ::prost::alloc::string::String,
     pub nanos: ::prost::alloc::string::String,
@@ -9,7 +9,7 @@ pub struct Timestamp {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Credential {
     pub public_key: ::prost::alloc::string::String,
     pub r#type: super::super::common::v1::CredentialType,
@@ -17,7 +17,7 @@ pub struct Credential {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Quorum {
     #[serde(default)]
     pub threshold: i32,
@@ -27,7 +27,7 @@ pub struct Quorum {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Feature {
     pub name: super::super::common::v1::FeatureName,
     #[serde(default)]
@@ -39,7 +39,7 @@ pub struct Feature {
 /// ABIs/IDLs are JSON objects and can be up to several hundred kb in size.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SmartContractInterfaceReference {
     pub smart_contract_interface_id: ::prost::alloc::string::String,
     pub smart_contract_address: ::prost::alloc::string::String,
@@ -68,7 +68,7 @@ pub struct EarnConfig {
 /// Written by the enclave when a DeployEarnWrapper activity is processed.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnWrapper {
     /// The underlying yield vault being wrapped.
     pub vault_address: ::prost::alloc::string::String,
@@ -105,7 +105,7 @@ pub struct EarnWrapper {
 /// organization_id + the wrapper's vault/chain to the authorizing ruling before inserting.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnWrapperPayload {
     /// The org this wrapper belongs to.
     pub organization_id: ::prost::alloc::string::String,
@@ -118,7 +118,7 @@ pub struct EarnWrapperPayload {
 /// signature against its pinned signer public key.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SignedEarnWrapper {
     #[serde(default)]
     pub payload: ::core::option::Option<EarnWrapperPayload>,

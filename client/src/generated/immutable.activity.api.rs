@@ -1,7 +1,7 @@
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ApiKeyParams {
     /// @inject_tag: validate:"required,tk_label_length,tk_label"
     pub api_key_name: ::prost::alloc::string::String,

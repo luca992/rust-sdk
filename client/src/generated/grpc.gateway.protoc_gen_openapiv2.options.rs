@@ -68,7 +68,7 @@ pub struct Parameters {
     #[prost(message, repeated, tag = "1")]
     pub headers: ::prost::alloc::vec::Vec<HeaderParameter>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct HeaderParameter {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
@@ -123,7 +123,7 @@ pub mod header_parameter {
         }
     }
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Header {
     #[prost(string, tag = "1")]
     pub description: ::prost::alloc::string::String,
@@ -175,7 +175,7 @@ pub struct Info {
         ::prost_types::Value,
     >,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Contact {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
@@ -184,14 +184,14 @@ pub struct Contact {
     #[prost(string, tag = "3")]
     pub email: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct License {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub url: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ExternalDocumentation {
     #[prost(string, tag = "1")]
     pub description: ::prost::alloc::string::String,
@@ -270,7 +270,7 @@ pub struct JsonSchema {
     >,
 }
 pub mod json_schema {
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
     pub struct FieldConfiguration {
         #[prost(string, tag = "47")]
         pub path_param_name: ::prost::alloc::string::String,
@@ -493,7 +493,7 @@ pub struct SecurityRequirement {
     >,
 }
 pub mod security_requirement {
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
     pub struct SecurityRequirementValue {
         #[prost(string, repeated, tag = "1")]
         pub scope: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,

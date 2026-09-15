@@ -1,7 +1,7 @@
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct PublicKeyCredentialDescriptor {
     /// Must be literal string "public-key"
     pub r#type: ::prost::alloc::string::String,
@@ -13,7 +13,7 @@ pub struct PublicKeyCredentialDescriptor {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AuthenticatorAssertionResponse {
     /// ENCODING: base64url
     pub client_data_json: ::prost::alloc::string::String,
@@ -35,7 +35,7 @@ pub struct AuthenticatorAssertionResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AuthenticatorAttestationResponse {
     /// ENCODING: base64url
     pub client_data_json: ::prost::alloc::string::String,
@@ -49,7 +49,7 @@ pub struct AuthenticatorAttestationResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct PublicKeyCredentialWithAttestation {
     pub id: ::prost::alloc::string::String,
     /// Must be literal string "public-key"
@@ -66,7 +66,7 @@ pub struct PublicKeyCredentialWithAttestation {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct PublicKeyCredentialWithAssertion {
     pub id: ::prost::alloc::string::String,
     /// Must be literal string "public-key"
@@ -83,7 +83,7 @@ pub struct PublicKeyCredentialWithAssertion {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct SimpleClientExtensionResults {
     #[serde(default)]
     pub appid: ::core::option::Option<bool>,
@@ -97,7 +97,7 @@ pub struct SimpleClientExtensionResults {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct CredPropsAuthenticationExtensionsClientOutputs {
     #[serde(default)]
     pub rk: bool,

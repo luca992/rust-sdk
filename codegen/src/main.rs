@@ -56,7 +56,7 @@ enum RpcResponseKind {
 fn main() {
     let out_dir = PathBuf::from(GENERATED_CLIENT_DIR);
 
-    tonic_build::configure()
+    tonic_prost_build::configure()
         .build_server(false)
         .build_client(false)
         .include_file("mod.rs")

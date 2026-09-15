@@ -54,7 +54,7 @@ pub struct Vote {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeletePaymentMethodRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -69,7 +69,7 @@ pub struct DeletePaymentMethodRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ActivateBillingTierRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -84,7 +84,7 @@ pub struct ActivateBillingTierRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SetPaymentMethodRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -99,7 +99,7 @@ pub struct SetPaymentMethodRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdatePaymentMethodRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -114,7 +114,7 @@ pub struct UpdatePaymentMethodRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EnableAuthProxyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -129,7 +129,7 @@ pub struct EnableAuthProxyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DisableAuthProxyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -144,7 +144,7 @@ pub struct DisableAuthProxyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreatePolicyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -174,7 +174,7 @@ pub struct CreatePoliciesRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdatePolicyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -189,7 +189,7 @@ pub struct UpdatePolicyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeletePolicyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -204,7 +204,7 @@ pub struct DeletePolicyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateReadOnlySessionRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -219,7 +219,7 @@ pub struct CreateReadOnlySessionRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateReadWriteSessionRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -249,7 +249,7 @@ pub struct CreateInvitationsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteInvitationRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -264,7 +264,7 @@ pub struct DeleteInvitationRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AcceptInvitationRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -309,7 +309,7 @@ pub struct CreatePrivateKeysRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SignRawPayloadRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -324,7 +324,7 @@ pub struct SignRawPayloadRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SignRawPayloadsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -354,7 +354,7 @@ pub struct CreateUsersRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateUserRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -369,7 +369,7 @@ pub struct UpdateUserRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateUserNameRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -384,7 +384,7 @@ pub struct UpdateUserNameRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateUserEmailRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -399,7 +399,7 @@ pub struct UpdateUserEmailRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateUserPhoneNumberRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -414,7 +414,7 @@ pub struct UpdateUserPhoneNumberRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateOrganizationNameRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -429,7 +429,7 @@ pub struct UpdateOrganizationNameRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteUsersRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -459,7 +459,7 @@ pub struct CreateAuthenticatorsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteAuthenticatorsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -489,7 +489,7 @@ pub struct CreateApiKeysRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteApiKeysRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -504,7 +504,7 @@ pub struct DeleteApiKeysRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateUserTagRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -519,7 +519,7 @@ pub struct CreateUserTagRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateUserTagRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -534,7 +534,7 @@ pub struct UpdateUserTagRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteUserTagsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -549,7 +549,7 @@ pub struct DeleteUserTagsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreatePrivateKeyTagRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -564,7 +564,7 @@ pub struct CreatePrivateKeyTagRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdatePrivateKeyTagRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -594,7 +594,7 @@ pub struct UpdateAuthProxyConfigRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeletePrivateKeyTagsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -609,7 +609,7 @@ pub struct DeletePrivateKeyTagsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateOrganizationRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -624,7 +624,7 @@ pub struct CreateOrganizationRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteOrganizationRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -639,7 +639,7 @@ pub struct DeleteOrganizationRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SignTransactionRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -654,7 +654,7 @@ pub struct SignTransactionRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateSmartContractInterfaceRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -669,7 +669,7 @@ pub struct CreateSmartContractInterfaceRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteSmartContractInterfaceRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -684,7 +684,7 @@ pub struct DeleteSmartContractInterfaceRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ApproveActivityRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -699,7 +699,7 @@ pub struct ApproveActivityRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct RejectActivityRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -714,7 +714,7 @@ pub struct RejectActivityRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateRootQuorumRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -729,7 +729,7 @@ pub struct UpdateRootQuorumRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateAllowedOriginsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -759,7 +759,7 @@ pub struct CreateSubOrganizationRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct InitUserEmailRecoveryRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -774,7 +774,7 @@ pub struct InitUserEmailRecoveryRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct RecoverUserRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -789,7 +789,7 @@ pub struct RecoverUserRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ExportPrivateKeyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -804,7 +804,7 @@ pub struct ExportPrivateKeyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ExportWalletRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -819,7 +819,7 @@ pub struct ExportWalletRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ExportWalletAccountRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -834,7 +834,7 @@ pub struct ExportWalletAccountRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SetOrganizationFeatureRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -849,7 +849,7 @@ pub struct SetOrganizationFeatureRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct RemoveOrganizationFeatureRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -894,7 +894,7 @@ pub struct CreateWalletAccountsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct OauthRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -909,7 +909,7 @@ pub struct OauthRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct OauthLoginRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -924,7 +924,7 @@ pub struct OauthLoginRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct StampLoginRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -939,7 +939,7 @@ pub struct StampLoginRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct OtpLoginRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -954,7 +954,7 @@ pub struct OtpLoginRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct InitOtpRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -969,7 +969,7 @@ pub struct InitOtpRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpsertGasUsageConfigRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -982,7 +982,7 @@ pub struct UpsertGasUsageConfigRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct InitFiatOnRampRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -997,7 +997,7 @@ pub struct InitFiatOnRampRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct VerifyOtpRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1012,7 +1012,7 @@ pub struct VerifyOtpRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct InitOtpAuthRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1027,7 +1027,7 @@ pub struct InitOtpAuthRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct OtpAuthRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1042,7 +1042,7 @@ pub struct OtpAuthRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EmailAuthRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1057,7 +1057,7 @@ pub struct EmailAuthRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct InitImportWalletRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1087,7 +1087,7 @@ pub struct ImportWalletRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct InitImportPrivateKeyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1102,7 +1102,7 @@ pub struct InitImportPrivateKeyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ImportPrivateKeyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1132,7 +1132,7 @@ pub struct CreateOauthProvidersRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteOauthProvidersRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1147,7 +1147,7 @@ pub struct DeleteOauthProvidersRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeletePrivateKeysRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1162,7 +1162,7 @@ pub struct DeletePrivateKeysRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteWalletsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1177,7 +1177,7 @@ pub struct DeleteWalletsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteSubOrganizationRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1192,7 +1192,7 @@ pub struct DeleteSubOrganizationRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateWalletRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1207,7 +1207,7 @@ pub struct UpdateWalletRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateWalletAccountNameRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1222,7 +1222,7 @@ pub struct UpdateWalletAccountNameRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateOauth2CredentialRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1237,7 +1237,7 @@ pub struct CreateOauth2CredentialRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateOauth2CredentialRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1252,7 +1252,7 @@ pub struct UpdateOauth2CredentialRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteOauth2CredentialRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1267,7 +1267,7 @@ pub struct DeleteOauth2CredentialRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateFiatOnRampCredentialRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1282,7 +1282,7 @@ pub struct CreateFiatOnRampCredentialRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateFiatOnRampCredentialRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1297,7 +1297,7 @@ pub struct UpdateFiatOnRampCredentialRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteFiatOnRampCredentialRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1334,7 +1334,7 @@ pub struct PolicyEvaluation {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Oauth2AuthenticateRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1349,7 +1349,7 @@ pub struct Oauth2AuthenticateRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteWalletAccountsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1364,7 +1364,7 @@ pub struct DeleteWalletAccountsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeletePoliciesRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1379,7 +1379,7 @@ pub struct DeletePoliciesRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EthSendRawTransactionRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1409,7 +1409,7 @@ pub struct EthSendTransactionRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SolSendTransactionRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1424,7 +1424,7 @@ pub struct SolSendTransactionRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ExecuteSwapRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1439,7 +1439,7 @@ pub struct ExecuteSwapRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateSwapQuoteRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1454,7 +1454,7 @@ pub struct CreateSwapQuoteRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ClaimSwapFeesRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1469,7 +1469,7 @@ pub struct ClaimSwapFeesRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpsertSwapConfigRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1484,7 +1484,7 @@ pub struct UpsertSwapConfigRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateTvcOperatorRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1512,7 +1512,7 @@ pub struct CreateTvcAppRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateTvcDeploymentRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1525,7 +1525,7 @@ pub struct CreateTvcDeploymentRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteTvcAppAndDeploymentsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1553,7 +1553,7 @@ pub struct CreateTvcManifestApprovalsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct PostTvcQuorumKeyShareRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1566,7 +1566,7 @@ pub struct PostTvcQuorumKeyShareRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateTvcQuorumKeyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1581,7 +1581,7 @@ pub struct CreateTvcQuorumKeyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ReEncryptTvcQuorumKeyShareRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1611,7 +1611,7 @@ pub struct CreateWebhookEndpointRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateWebhookEndpointRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1626,7 +1626,7 @@ pub struct UpdateWebhookEndpointRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteWebhookEndpointRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1656,7 +1656,7 @@ pub struct SetIpAllowlistRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct RemoveIpAllowlistRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1671,7 +1671,7 @@ pub struct RemoveIpAllowlistRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteTvcDeploymentRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1686,7 +1686,7 @@ pub struct DeleteTvcDeploymentRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteAppRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1701,7 +1701,7 @@ pub struct DeleteAppRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UpdateTvcAppLiveDeploymentRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1716,7 +1716,7 @@ pub struct UpdateTvcAppLiveDeploymentRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct RestoreTvcDeploymentRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1744,7 +1744,7 @@ pub struct SparkSignFrostRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct InitImportSecretsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1770,7 +1770,7 @@ pub struct ImportSecretsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteSecretsRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1861,7 +1861,7 @@ pub struct UpdateMfaPolicyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteMfaPolicyRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1874,7 +1874,7 @@ pub struct DeleteMfaPolicyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CreateSessionProfileRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1887,7 +1887,7 @@ pub struct CreateSessionProfileRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnDeployWrapperRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1902,7 +1902,7 @@ pub struct EarnDeployWrapperRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnDepositRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1917,7 +1917,7 @@ pub struct EarnDepositRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnWithdrawRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1932,7 +1932,7 @@ pub struct EarnWithdrawRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnSetWrapperStateRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1947,7 +1947,7 @@ pub struct EarnSetWrapperStateRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ClaimEarnFeesRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -1962,7 +1962,7 @@ pub struct ClaimEarnFeesRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ActivityFilter {
     #[serde(default)]
     pub statuses: Vec<super::super::super::immutable::activity::v1::ActivityStatus>,
@@ -1976,7 +1976,7 @@ pub struct ActivityFilter {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ActivityCursor {
     #[serde(default)]
     pub version: u32,
@@ -1987,7 +1987,7 @@ pub struct ActivityCursor {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ActivityPagination {
     pub limit: ::prost::alloc::string::String,
     pub before: ::prost::alloc::string::String,
@@ -1996,7 +1996,7 @@ pub struct ActivityPagination {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EthUndelegate7702Request {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,
@@ -2026,7 +2026,7 @@ pub struct CreateVelocityControlRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeleteVelocityControlRequest {
     pub r#type: ::prost::alloc::string::String,
     pub timestamp_ms: ::prost::alloc::string::String,

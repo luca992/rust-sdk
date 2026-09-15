@@ -5,7 +5,9 @@ use chrono::{DateTime, Utc};
 /// `google.protobuf.Timestamp`.
 ///
 /// (De)serializes as an RFC 3339 string per the proto3 JSON mapping.
-#[derive(Clone, PartialEq, ::prost::Message)]
+// `Eq`/`Hash` match what prost-build 0.14 derives for messages with no float
+// or map fields, so generated types holding a `Timestamp` can derive them too.
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Timestamp {
     /// Seconds of UTC time since Unix epoch.
     #[prost(int64, tag = "1")]

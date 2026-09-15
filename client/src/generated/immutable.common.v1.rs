@@ -1,7 +1,7 @@
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct PolicyEvaluation {
     pub policy_id: ::prost::alloc::string::String,
     pub outcome: Outcome,

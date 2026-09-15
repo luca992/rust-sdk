@@ -65,7 +65,7 @@ pub struct SignupUsageV2 {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct LoginUsage {
     pub public_key: ::prost::alloc::string::String,
 }

@@ -1,7 +1,7 @@
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Timestamp {
     /// Stringified int
     pub seconds: ::prost::alloc::string::String,
@@ -43,7 +43,7 @@ pub struct OrganizationData {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct OauthProvider {
     pub provider_id: ::prost::alloc::string::String,
     pub provider_name: ::prost::alloc::string::String,
@@ -86,7 +86,7 @@ pub struct User {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ApiKey {
     #[serde(default)]
     pub credential: ::core::option::Option<Credential>,
@@ -103,7 +103,7 @@ pub struct ApiKey {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Authenticator {
     #[serde(default)]
     pub transports: Vec<
@@ -125,7 +125,7 @@ pub struct Authenticator {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Credential {
     pub public_key: ::prost::alloc::string::String,
     /// To distinguish the credential type (webauthn, API key)
@@ -137,7 +137,7 @@ pub struct Credential {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Policy {
     pub policy_id: ::prost::alloc::string::String,
     pub policy_name: ::prost::alloc::string::String,
@@ -179,7 +179,7 @@ pub struct PrivateKey {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Address {
     pub format: super::super::super::immutable::common::v1::AddressFormat,
     pub address: ::prost::alloc::string::String,
@@ -187,7 +187,7 @@ pub struct Address {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Invitation {
     pub invitation_id: ::prost::alloc::string::String,
     pub receiver_user_name: ::prost::alloc::string::String,
@@ -205,7 +205,7 @@ pub struct Invitation {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Tag {
     pub tag_id: ::prost::alloc::string::String,
     pub tag_name: ::prost::alloc::string::String,
@@ -218,7 +218,7 @@ pub struct Tag {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Quorum {
     #[serde(default)]
     pub threshold: i32,
@@ -228,7 +228,7 @@ pub struct Quorum {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Wallet {
     pub wallet_id: ::prost::alloc::string::String,
     pub wallet_name: ::prost::alloc::string::String,
@@ -256,7 +256,7 @@ pub struct Config {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Oauth2Credential {
     pub oauth2_credential_id: ::prost::alloc::string::String,
     pub organization_id: ::prost::alloc::string::String,
@@ -271,7 +271,7 @@ pub struct Oauth2Credential {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct FiatOnRampCredential {
     pub fiat_onramp_credential_id: ::prost::alloc::string::String,
     pub organization_id: ::prost::alloc::string::String,
@@ -328,7 +328,7 @@ pub struct RequiredAuthenticationMethod {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AuthenticationMethod {
     pub r#type: super::super::super::immutable::common::v1::AuthenticationType,
     #[serde(default)]
@@ -405,7 +405,7 @@ impl TagType {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct BootProof {
     pub ephemeral_public_key_hex: ::prost::alloc::string::String,
     pub aws_attestation_doc_b64: ::prost::alloc::string::String,
@@ -422,7 +422,7 @@ pub struct BootProof {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AppProof {
     pub scheme: SignatureScheme,
     pub public_key: ::prost::alloc::string::String,
@@ -454,7 +454,7 @@ pub mod app_proof_payload {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AddressDerivationProofPayload {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -613,7 +613,7 @@ pub struct VelocityControlDataSourceChainAssetTransfer {
 /// A chain asset that provides transfer data.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct VelocityControlDataSourceChainAssetTransferDefinition {
     /// CAIP-19 identifier for the asset.
     pub caip19: ::prost::alloc::string::String,
@@ -654,7 +654,7 @@ pub struct VelocityControlDataSourceActivityExecutionFilter {
 /// An activity type filter.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct VelocityControlDataSourceFilterActivity {
     /// Name of an activity type to include, such as `ACTIVITY_TYPE_SOL_SEND_TRANSACTION`.
     pub activity_type: ::prost::alloc::string::String,
@@ -663,7 +663,7 @@ pub struct VelocityControlDataSourceFilterActivity {
 /// Selects when to measure an asset transfer. Set exactly one definition.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct VelocityControlDataSourcePhase {
     #[serde(default)]
     pub definition: ::core::option::Option<
@@ -673,7 +673,7 @@ pub struct VelocityControlDataSourcePhase {
 /// Nested message and enum types in `VelocityControlDataSourcePhase`.
 pub mod velocity_control_data_source_phase {
     #[derive(::serde::Serialize, ::serde::Deserialize)]
-    #[derive(Clone, Copy, PartialEq)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash)]
     #[derive(Debug)]
     pub enum Definition {
         /// Measures the transfer when Turnkey signs the transaction and returns it to the user.
@@ -688,20 +688,20 @@ pub mod velocity_control_data_source_phase {
 /// Measures a transfer when Turnkey signs the transaction.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct VelocityControlDataSourcePhaseSignature {}
 #[derive(Debug)]
 /// Reserved for future measurement after a transaction lands on chain.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct VelocityControlDataSourcePhaseSubmission {}
 #[derive(Debug)]
 /// Defines how the control aggregates data and compares the result to a threshold.
 /// The expression has the form `<method>(<scoped data>) <operator> <threshold>`.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct VelocityControlAggregation {
     /// Method that aggregates matching data points.
     pub method: VelocityControlAggregationMethod,
@@ -720,7 +720,7 @@ pub struct VelocityControlAggregation {
 /// Time window for aggregation. Set exactly one definition.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct VelocityControlAggregationWindow {
     #[serde(default)]
     pub definition: ::core::option::Option<
@@ -730,7 +730,7 @@ pub struct VelocityControlAggregationWindow {
 /// Nested message and enum types in `VelocityControlAggregationWindow`.
 pub mod velocity_control_aggregation_window {
     #[derive(::serde::Serialize, ::serde::Deserialize)]
-    #[derive(Clone, PartialEq)]
+    #[derive(Clone, PartialEq, Eq, Hash)]
     #[derive(Debug)]
     pub enum Definition {
         /// Uses a rolling time window.
@@ -745,7 +745,7 @@ pub mod velocity_control_aggregation_window {
 /// A rolling time window.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct VelocityControlAggregationWindowRolling {
     /// Duration of the rolling window, in seconds, as a base-10 integer string.
     pub duration: ::prost::alloc::string::String,
@@ -754,13 +754,13 @@ pub struct VelocityControlAggregationWindowRolling {
 /// An aggregation window without a time limit.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct VelocityControlAggregationWindowInfinite {}
 #[derive(Debug)]
 /// Scope that partitions matching data before aggregation. Set exactly one definition.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct VelocityControlAggregationGroupBy {
     #[serde(default)]
     pub definition: ::core::option::Option<
@@ -770,7 +770,7 @@ pub struct VelocityControlAggregationGroupBy {
 /// Nested message and enum types in `VelocityControlAggregationGroupBy`.
 pub mod velocity_control_aggregation_group_by {
     #[derive(::serde::Serialize, ::serde::Deserialize)]
-    #[derive(Clone, Copy, PartialEq)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash)]
     #[derive(Debug)]
     pub enum Definition {
         /// Uses one shared bucket for the Organization.
@@ -788,19 +788,19 @@ pub mod velocity_control_aggregation_group_by {
 /// Uses one shared bucket for the Organization.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct VelocityControlAggregationGroupByOrganization {}
 #[derive(Debug)]
 /// Uses one bucket for each User.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct VelocityControlAggregationGroupByUser {}
 #[derive(Debug)]
 /// Uses one bucket for each Wallet.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct VelocityControlAggregationGroupByWallet {}
 /// Method used to aggregate control data.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
@@ -907,7 +907,7 @@ impl VelocityControlAggregationOperator {
 /// use the corresponding raw atomic field instead.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnValueDisplay {
     pub usd: ::prost::alloc::string::String,
     pub crypto: ::prost::alloc::string::String,
@@ -915,7 +915,7 @@ pub struct EarnValueDisplay {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnVault {
     pub vault_address: ::prost::alloc::string::String,
     pub provider: super::super::super::immutable::data::v1::EarnProvider,
@@ -940,7 +940,7 @@ pub struct EarnVault {
 /// share of the vault's assets held there.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnVaultExposure {
     pub market_id: ::prost::alloc::string::String,
     pub collateral_symbol: ::prost::alloc::string::String,
@@ -991,7 +991,7 @@ pub struct EarnEnabledVault {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AssetMetadata {
     pub caip19: ::prost::alloc::string::String,
     pub symbol: ::prost::alloc::string::String,
@@ -1022,7 +1022,7 @@ pub struct MfaStatus {
 /// SessionProfile defines the constraints and capabilities of a session that can be created by a user.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SessionProfile {
     pub session_profile_id: ::prost::alloc::string::String,
     pub session_profile_name: ::prost::alloc::string::String,
@@ -1039,7 +1039,7 @@ pub struct SessionProfile {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SmartContractInterface {
     pub organization_id: ::prost::alloc::string::String,
     pub smart_contract_interface_id: ::prost::alloc::string::String,
@@ -1109,7 +1109,7 @@ pub struct TvcDeployment {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TvcContainerSpec {
     pub container_url: ::prost::alloc::string::String,
     pub path: ::prost::alloc::string::String,
@@ -1131,7 +1131,7 @@ pub struct TvcContainerSpec {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TvcOperatorApproval {
     pub id: ::prost::alloc::string::String,
     pub manifest_id: ::prost::alloc::string::String,
@@ -1165,7 +1165,7 @@ pub struct TvcOperatorSet {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TvcOperator {
     pub id: ::prost::alloc::string::String,
     pub name: ::prost::alloc::string::String,
@@ -1179,7 +1179,7 @@ pub struct TvcOperator {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TvcManifest {
     pub id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1193,7 +1193,7 @@ pub struct TvcManifest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct DeploymentStatus {
     pub deployment_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1218,7 +1218,7 @@ pub struct AppStatus {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct LogLine {
     pub content: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1272,7 +1272,7 @@ impl ProvisioningState {
 /// An account derived from a Wallet
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct WalletAccount {
     pub wallet_account_id: ::prost::alloc::string::String,
     pub organization_id: ::prost::alloc::string::String,

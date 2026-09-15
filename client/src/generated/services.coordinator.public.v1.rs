@@ -1,7 +1,7 @@
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct NoopCodegenAnchorRequest {}
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
@@ -20,7 +20,7 @@ pub struct NoopCodegenAnchorResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TestRateLimitsRequest {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -31,19 +31,19 @@ pub struct TestRateLimitsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct TestRateLimitsResponse {}
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWhoamiRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWhoamiResponse {
     pub organization_id: ::prost::alloc::string::String,
     pub organization_name: ::prost::alloc::string::String,
@@ -53,7 +53,7 @@ pub struct GetWhoamiResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSubOrgIdsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub filter_type: ::prost::alloc::string::String,
@@ -66,7 +66,7 @@ pub struct GetSubOrgIdsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetVerifiedSubOrgIdsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub filter_type: ::prost::alloc::string::String,
@@ -79,7 +79,7 @@ pub struct GetVerifiedSubOrgIdsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSubOrgIdsResponse {
     #[serde(default)]
     pub organization_ids: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -87,7 +87,7 @@ pub struct GetSubOrgIdsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetVerifiedSubOrgIdsResponse {
     #[serde(default)]
     pub organization_ids: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
@@ -95,7 +95,7 @@ pub struct GetVerifiedSubOrgIdsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetOrganizationRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -112,7 +112,7 @@ pub struct GetOrganizationResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetActivityRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub activity_id: ::prost::alloc::string::String,
@@ -120,7 +120,7 @@ pub struct GetActivityRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetActivitiesRequest {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -149,7 +149,7 @@ pub struct GetActivitiesResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetUserRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub user_id: ::prost::alloc::string::String,
@@ -167,7 +167,7 @@ pub struct GetUserResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetUsersRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -194,7 +194,7 @@ pub struct ActivityResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetPoliciesRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -211,7 +211,7 @@ pub struct GetPoliciesResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetPolicyRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub policy_id: ::prost::alloc::string::String,
@@ -219,7 +219,7 @@ pub struct GetPolicyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetPolicyResponse {
     #[serde(default)]
     pub policy: ::core::option::Option<
@@ -229,7 +229,7 @@ pub struct GetPolicyResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetVelocityControlRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub velocity_control_id: ::prost::alloc::string::String,
@@ -247,7 +247,7 @@ pub struct GetVelocityControlResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListVelocityControlsRequest {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -272,14 +272,14 @@ pub struct ListVelocityControlsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetActivePoliciesRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ActivePolicyStatus {
     pub organization_id: ::prost::alloc::string::String,
     pub policy_id: ::prost::alloc::string::String,
@@ -305,7 +305,7 @@ pub struct GetActivePoliciesResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSmartContractInterfacesRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -322,7 +322,7 @@ pub struct GetSmartContractInterfacesResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSmartContractInterfaceRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub smart_contract_interface_id: ::prost::alloc::string::String,
@@ -330,7 +330,7 @@ pub struct GetSmartContractInterfaceRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSmartContractInterfaceResponse {
     #[serde(default)]
     pub smart_contract_interface: ::core::option::Option<
@@ -340,7 +340,7 @@ pub struct GetSmartContractInterfaceResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetAuthenticatorRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub authenticator_id: ::prost::alloc::string::String,
@@ -348,7 +348,7 @@ pub struct GetAuthenticatorRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetAuthenticatorResponse {
     #[serde(default)]
     pub authenticator: ::core::option::Option<
@@ -358,7 +358,7 @@ pub struct GetAuthenticatorResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetAuthenticatorsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub user_id: ::prost::alloc::string::String,
@@ -376,7 +376,7 @@ pub struct GetAuthenticatorsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetOauthProvidersRequest {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -395,7 +395,7 @@ pub struct GetOauthProvidersResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetApiKeyRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub api_key_id: ::prost::alloc::string::String,
@@ -403,7 +403,7 @@ pub struct GetApiKeyRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetApiKeyResponse {
     #[serde(default)]
     pub api_key: ::core::option::Option<
@@ -413,7 +413,7 @@ pub struct GetApiKeyResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetApiKeysRequest {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -432,7 +432,7 @@ pub struct GetApiKeysResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSendTransactionStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub send_transaction_status_id: ::prost::alloc::string::String,
@@ -440,7 +440,7 @@ pub struct GetSendTransactionStatusRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EthSendTransactionStatus {
     #[serde(default)]
     pub tx_hash: ::core::option::Option<::prost::alloc::string::String>,
@@ -448,7 +448,7 @@ pub struct EthSendTransactionStatus {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SolanaSendTransactionStatus {
     #[serde(default)]
     pub signature: ::core::option::Option<::prost::alloc::string::String>,
@@ -471,7 +471,7 @@ pub struct GetSendTransactionStatusResponse {
 pub mod get_send_transaction_status_response {
     /// VM-specific transaction details
     #[derive(::serde::Serialize, ::serde::Deserialize)]
-    #[derive(Clone, PartialEq)]
+    #[derive(Clone, PartialEq, Eq, Hash)]
     #[derive(Debug)]
     pub enum Details {
         #[serde(rename = "DETAILS_ETH")]
@@ -483,7 +483,7 @@ pub mod get_send_transaction_status_response {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetOnRampTransactionStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub transaction_id: ::prost::alloc::string::String,
@@ -493,14 +493,14 @@ pub struct GetOnRampTransactionStatusRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetOnRampTransactionStatusResponse {
     pub transaction_status: ::prost::alloc::string::String,
 }
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetPrivateKeysRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -517,7 +517,7 @@ pub struct GetPrivateKeysResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetPrivateKeyRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub private_key_id: ::prost::alloc::string::String,
@@ -535,7 +535,7 @@ pub struct GetPrivateKeyResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWalletsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -552,7 +552,7 @@ pub struct GetWalletsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWalletRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub wallet_id: ::prost::alloc::string::String,
@@ -560,7 +560,7 @@ pub struct GetWalletRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWalletResponse {
     #[serde(default)]
     pub wallet: ::core::option::Option<
@@ -570,7 +570,7 @@ pub struct GetWalletResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWalletAccountsRequest {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -595,7 +595,7 @@ pub struct GetWalletAccountsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWalletAccountRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub wallet_id: ::prost::alloc::string::String,
@@ -607,7 +607,7 @@ pub struct GetWalletAccountRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWalletAccountResponse {
     #[serde(default)]
     pub account: ::core::option::Option<
@@ -617,7 +617,7 @@ pub struct GetWalletAccountResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListUserTagsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -634,7 +634,7 @@ pub struct ListUserTagsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListPrivateKeyTagsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -651,7 +651,7 @@ pub struct ListPrivateKeyTagsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetOrganizationConfigsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -668,7 +668,7 @@ pub struct GetOrganizationConfigsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetPolicyEvaluationsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub activity_id: ::prost::alloc::string::String,
@@ -686,7 +686,7 @@ pub struct GetPolicyEvaluationsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListOauth2CredentialsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -703,7 +703,7 @@ pub struct ListOauth2CredentialsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListWebhookEndpointsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -720,7 +720,7 @@ pub struct ListWebhookEndpointsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetOauth2CredentialRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub oauth2_credential_id: ::prost::alloc::string::String,
@@ -728,7 +728,7 @@ pub struct GetOauth2CredentialRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetOauth2CredentialResponse {
     #[serde(default)]
     pub oauth2_credential: ::core::option::Option<
@@ -738,7 +738,7 @@ pub struct GetOauth2CredentialResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetBootProofRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub ephemeral_key: ::prost::alloc::string::String,
@@ -746,7 +746,7 @@ pub struct GetBootProofRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetLatestBootProofRequest {
     pub organization_id: ::prost::alloc::string::String,
     /// This should really be app_uuid but we are not planning on renaming right now just to avoid overhead of a breaking
@@ -756,7 +756,7 @@ pub struct GetLatestBootProofRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct BootProofResponse {
     #[serde(default)]
     pub boot_proof: ::core::option::Option<
@@ -766,7 +766,7 @@ pub struct BootProofResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetAppProofsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub activity_id: ::prost::alloc::string::String,
@@ -784,7 +784,7 @@ pub struct GetAppProofsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListFiatOnRampCredentialsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -801,7 +801,7 @@ pub struct ListFiatOnRampCredentialsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSwapStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub swap_request_id: ::prost::alloc::string::String,
@@ -809,7 +809,7 @@ pub struct GetSwapStatusRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SwapRefund {
     pub asset: ::prost::alloc::string::String,
     pub amount: ::prost::alloc::string::String,
@@ -856,14 +856,14 @@ pub struct GetSwapStatusResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetGasUsageRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetGasUsageResponse {
     #[serde(default)]
     pub window_duration_minutes: i32,
@@ -873,7 +873,7 @@ pub struct GetGasUsageResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListEarnVaultsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub provider: super::super::super::super::immutable::data::v1::EarnProvider,
@@ -913,7 +913,7 @@ pub struct EarnVaultCursor {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListEarnEnabledVaultsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub provider: super::super::super::super::immutable::data::v1::EarnProvider,
@@ -935,7 +935,7 @@ pub struct ListEarnEnabledVaultsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListEarnPositionsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub wallet_address: ::prost::alloc::string::String,
@@ -943,7 +943,7 @@ pub struct ListEarnPositionsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnPosition {
     pub vault_address: ::prost::alloc::string::String,
     pub wrapper_address: ::prost::alloc::string::String,
@@ -963,7 +963,7 @@ pub struct EarnPosition {
 /// Values are for presentation; do not do arithmetic with them.
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EarnPositionDisplay {
     pub current_value_usd: ::prost::alloc::string::String,
     pub total_deposited_usd: ::prost::alloc::string::String,
@@ -983,7 +983,7 @@ pub struct ListEarnPositionsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetEarnWithdrawStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub withdraw_request_id: ::prost::alloc::string::String,
@@ -991,7 +991,7 @@ pub struct GetEarnWithdrawStatusRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetEarnWithdrawStatusResponse {
     pub status: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1002,7 +1002,7 @@ pub struct GetEarnWithdrawStatusResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetClaimEarnFeesStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub claim_request_id: ::prost::alloc::string::String,
@@ -1010,7 +1010,7 @@ pub struct GetClaimEarnFeesStatusRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetClaimEarnFeesStatusResponse {
     pub status: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1021,7 +1021,7 @@ pub struct GetClaimEarnFeesStatusResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetEarnDepositStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub deposit_request_id: ::prost::alloc::string::String,
@@ -1029,7 +1029,7 @@ pub struct GetEarnDepositStatusRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetEarnDepositStatusResponse {
     pub status: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1040,7 +1040,7 @@ pub struct GetEarnDepositStatusResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetEarnDeployStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub deploy_request_id: ::prost::alloc::string::String,
@@ -1048,7 +1048,7 @@ pub struct GetEarnDeployStatusRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetEarnDeployStatusResponse {
     pub status: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1059,7 +1059,7 @@ pub struct GetEarnDeployStatusResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetNoncesRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub address: ::prost::alloc::string::String,
@@ -1073,7 +1073,7 @@ pub struct GetNoncesRequest {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct GetNoncesResponse {
     #[serde(default)]
     #[serde_as(as = "Option<serde_with::DisplayFromStr>")]
@@ -1106,7 +1106,7 @@ pub struct EthFailureDetails {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct RevertChainEntry {
     pub address: ::prost::alloc::string::String,
     pub error_type: ::prost::alloc::string::String,
@@ -1117,7 +1117,7 @@ pub struct RevertChainEntry {
 /// Nested message and enum types in `RevertChainEntry`.
 pub mod revert_chain_entry {
     #[derive(::serde::Serialize, ::serde::Deserialize)]
-    #[derive(Clone, PartialEq)]
+    #[derive(Clone, PartialEq, Eq, Hash)]
     #[derive(Debug)]
     pub enum ErrorDetails {
         #[serde(rename = "ERROR_DETAILS_UNKNOWN")]
@@ -1131,7 +1131,7 @@ pub mod revert_chain_entry {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct UnknownRevertError {
     #[serde(default)]
     pub selector: ::core::option::Option<::prost::alloc::string::String>,
@@ -1142,7 +1142,7 @@ pub struct UnknownRevertError {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct NativeRevertError {
     #[serde(default)]
     pub native_type: ::core::option::Option<::prost::alloc::string::String>,
@@ -1155,7 +1155,7 @@ pub struct NativeRevertError {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct CustomRevertError {
     #[serde(default)]
     pub error_name: ::core::option::Option<::prost::alloc::string::String>,
@@ -1166,7 +1166,7 @@ pub struct CustomRevertError {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SolanaFailureDetails {
     pub source: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1186,7 +1186,7 @@ pub struct SolanaFailureDetails {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcAppsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -1203,7 +1203,7 @@ pub struct GetTvcAppsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcAppRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub tvc_app_id: ::prost::alloc::string::String,
@@ -1221,7 +1221,7 @@ pub struct GetTvcAppResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcAppDeploymentsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub app_id: ::prost::alloc::string::String,
@@ -1239,7 +1239,7 @@ pub struct GetTvcAppDeploymentsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcDeploymentRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub deployment_id: ::prost::alloc::string::String,
@@ -1257,7 +1257,7 @@ pub struct GetTvcDeploymentResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ValidateTvcImageRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub pivot_container_image_url: ::prost::alloc::string::String,
@@ -1269,14 +1269,14 @@ pub struct ValidateTvcImageRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ValidateTvcImageResponse {
     pub resolved_image_digest: ::prost::alloc::string::String,
 }
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcDeploymentProvisioningDetailsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub deployment_id: ::prost::alloc::string::String,
@@ -1285,7 +1285,7 @@ pub struct GetTvcDeploymentProvisioningDetailsRequest {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcDeploymentProvisioningDetailsResponse {
     #[serde(default)]
     #[serde_as(as = "Option<serde_with::base64::Base64>")]
@@ -1301,7 +1301,7 @@ pub struct GetTvcDeploymentProvisioningDetailsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetAppStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub app_id: ::prost::alloc::string::String,
@@ -1320,7 +1320,7 @@ pub struct GetAppStatusResponse {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcDeploymentDebugLogsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub deployment_id: ::prost::alloc::string::String,
@@ -1333,7 +1333,7 @@ pub struct GetTvcDeploymentDebugLogsRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TvcDeploymentDebugLogEntry {
     #[serde(default)]
     pub line: ::core::option::Option<
@@ -1352,17 +1352,17 @@ pub struct GetTvcDeploymentDebugLogsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct RefreshFeatureFlagsRequest {}
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash)]
 pub struct RefreshFeatureFlagsResponse {}
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetWalletAddressBalancesRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub address: ::prost::alloc::string::String,
@@ -1379,7 +1379,7 @@ pub struct GetWalletAddressBalancesResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AssetBalance {
     pub caip19: ::prost::alloc::string::String,
     pub symbol: ::prost::alloc::string::String,
@@ -1393,7 +1393,7 @@ pub struct AssetBalance {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct AssetBalanceDisplay {
     pub usd: ::prost::alloc::string::String,
     pub crypto: ::prost::alloc::string::String,
@@ -1401,7 +1401,7 @@ pub struct AssetBalanceDisplay {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListSupportedAssetsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub caip2: ::prost::alloc::string::String,
@@ -1419,7 +1419,7 @@ pub struct ListSupportedAssetsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetIpAllowlistRequest {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1428,7 +1428,7 @@ pub struct GetIpAllowlistRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct IpAllowlistRule {
     pub cidr: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1462,7 +1462,7 @@ pub struct GetIpAllowlistResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetMfaPolicyRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub user_id: ::prost::alloc::string::String,
@@ -1481,7 +1481,7 @@ pub struct GetMfaPolicyResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetMfaPoliciesRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub user_id: ::prost::alloc::string::String,
@@ -1499,7 +1499,7 @@ pub struct GetMfaPoliciesResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSessionProfileRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub session_profile_id: ::prost::alloc::string::String,
@@ -1507,7 +1507,7 @@ pub struct GetSessionProfileRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSessionProfileResponse {
     #[serde(default)]
     pub session_profile: ::core::option::Option<
@@ -1517,7 +1517,7 @@ pub struct GetSessionProfileResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetSessionProfilesRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
@@ -1534,7 +1534,7 @@ pub struct GetSessionProfilesResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetMfaStatusRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub activity_id: ::prost::alloc::string::String,
@@ -1554,7 +1554,7 @@ pub struct GetMfaStatusResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListEmailEventsRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub email: ::prost::alloc::string::String,
@@ -1575,7 +1575,7 @@ pub struct ListEmailEventsResponse {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EmailEvent {
     pub id: ::prost::alloc::string::String,
     pub organization_id: ::prost::alloc::string::String,
@@ -1593,7 +1593,7 @@ pub struct EmailEvent {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct EmailEventDetails {
     pub bounce_type: ::prost::alloc::string::String,
     pub bounce_sub_type: ::prost::alloc::string::String,
@@ -1608,7 +1608,7 @@ pub struct EmailEventDetails {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListSecretsRequest {
     pub organization_id: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1646,7 +1646,7 @@ pub struct SecretMetadata {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListEthTransactionHistoryRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub address: ::prost::alloc::string::String,
@@ -1659,7 +1659,7 @@ pub struct ListEthTransactionHistoryRequest {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct ListSolTransactionHistoryRequest {
     pub organization_id: ::prost::alloc::string::String,
     pub address: ::prost::alloc::string::String,
@@ -1736,7 +1736,7 @@ pub struct SolTransactionHistoryItem {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct SolTransactionHistorySigner {
     pub address: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1746,7 +1746,7 @@ pub struct SolTransactionHistorySigner {
 #[serde_with::serde_as]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TransactionHistoryBlock {
     #[serde(default)]
     #[serde_as(as = "serde_with::DisplayFromStr")]
@@ -1757,7 +1757,7 @@ pub struct TransactionHistoryBlock {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TransactionHistoryFee {
     pub amount: ::prost::alloc::string::String,
     pub caip19: ::prost::alloc::string::String,
@@ -1765,7 +1765,7 @@ pub struct TransactionHistoryFee {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TransactionHistoryTransfer {
     pub direction: ::prost::alloc::string::String,
     #[serde(default)]
@@ -1778,7 +1778,7 @@ pub struct TransactionHistoryTransfer {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TransactionHistoryAsset {
     pub caip19: ::prost::alloc::string::String,
     pub symbol: ::prost::alloc::string::String,
@@ -1789,7 +1789,7 @@ pub struct TransactionHistoryAsset {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TransactionHistoryDisplay {
     pub crypto: ::prost::alloc::string::String,
     pub usd: ::prost::alloc::string::String,
@@ -1797,7 +1797,7 @@ pub struct TransactionHistoryDisplay {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct TransactionHistoryTurnkey {
     #[serde(default)]
     pub sponsored: bool,
@@ -1807,14 +1807,14 @@ pub struct TransactionHistoryTurnkey {
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcQosVersionsRequest {
     pub organization_id: ::prost::alloc::string::String,
 }
 #[derive(Debug)]
 #[derive(::serde::Serialize, ::serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct GetTvcQosVersionsResponse {
     #[serde(default)]
     pub available_versions: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,

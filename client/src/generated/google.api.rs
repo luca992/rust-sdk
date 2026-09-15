@@ -59,7 +59,7 @@ pub struct HttpRule {
     pub pattern: ::core::option::Option<http_rule::Pattern>,
 }
 pub mod http_rule {
-    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum Pattern {
         #[prost(string, tag = "2")]
         Get(::prost::alloc::string::String),
@@ -75,7 +75,7 @@ pub mod http_rule {
         Custom(super::CustomHttpPattern),
     }
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct CustomHttpPattern {
     #[prost(string, tag = "1")]
     pub kind: ::prost::alloc::string::String,
@@ -87,7 +87,7 @@ pub struct Visibility {
     #[prost(message, repeated, tag = "1")]
     pub rules: ::prost::alloc::vec::Vec<VisibilityRule>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct VisibilityRule {
     #[prost(string, tag = "1")]
     pub selector: ::prost::alloc::string::String,
