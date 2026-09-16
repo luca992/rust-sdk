@@ -24,9 +24,12 @@ serde_with.workspace = true
 thiserror.workspace = true
 tokio.workspace = true
 turnkey_api_key_stamper.workspace = true
-turnkey_enclave_encrypt.workspace = true
+turnkey_enclave_encrypt = { workspace = true, optional = true }
 
 [features]
+default = ["enclave_encrypt"]
+# Secret import/export, which encrypts to a Turnkey enclave target key.
+enclave_encrypt = ["dep:turnkey_enclave_encrypt"]
 reqwest_native_tls = ["reqwest/native-tls-vendored", "reqwest/native-tls-alpn"]
 reqwest_brotli = ["reqwest/brotli"]
 reqwest_zstd = ["reqwest/zstd"]

@@ -1,6 +1,7 @@
 #![doc = include_str!("../README.md")]
 use serde::Serialize;
 use serde::de::DeserializeOwned;
+#[cfg(feature = "enclave_encrypt")]
 use std::collections::BTreeMap;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
@@ -11,18 +12,27 @@ use thiserror::Error;
 use generated::Activity;
 use generated::ActivityResponse;
 use generated::ActivityStatus;
+#[cfg(feature = "enclave_encrypt")]
 use generated::ExportSecretParams;
+#[cfg(feature = "enclave_encrypt")]
 use generated::ExportSecretsIntent;
+#[cfg(feature = "enclave_encrypt")]
 use generated::ImportSecretParams;
+#[cfg(feature = "enclave_encrypt")]
 use generated::ImportSecretsIntent;
+#[cfg(feature = "enclave_encrypt")]
 use generated::InitImportSecretsIntent;
 use generated::external::data::v1::AppProof;
 use generated::google::rpc::Status;
+#[cfg(feature = "enclave_encrypt")]
 use generated::immutable::models::v1::{KeyValue, TransportEncryptionSuite};
+#[cfg(feature = "enclave_encrypt")]
 use generated::result::Inner as ActivityResultInner;
 
 use turnkey_api_key_stamper::{Stamp, StampHeader, StamperError};
+#[cfg(feature = "enclave_encrypt")]
 use turnkey_enclave_encrypt::errors::EnclaveEncryptError;
+#[cfg(feature = "enclave_encrypt")]
 use turnkey_enclave_encrypt::{
     ExportClient, ImportClient, QuorumPublicKey, ServerTargetData, ServerTargetMsgV1,
 };
@@ -156,6 +166,7 @@ pub enum TurnkeyClientError {
     #[error("Expected {1} {0} in the activity result, got {2}")]
     UnexpectedResultCount(&'static str, usize, usize),
 
+    #[cfg(feature = "enclave_encrypt")]
     #[error("Enclave-encrypt failure while handling a secret: {0}")]
     EnclaveEncrypt(#[from] EnclaveEncryptError),
 }
@@ -571,6 +582,7 @@ impl<S: Stamp> TurnkeyClient<S> {
     }
 }
 
+#[cfg(feature = "enclave_encrypt")]
 impl<S: Stamp> TurnkeyClient<S> {
     /// Imports one UTF-8 secret and returns the created secret ID.
     pub async fn import_secret(
@@ -715,11 +727,13 @@ impl<S: Stamp> TurnkeyClient<S> {
 }
 
 /// Reads the signed data out of an enclave ingress bundle.
+#[cfg(feature = "enclave_encrypt")]
 fn target_data(bundle: &str) -> Result<ServerTargetData, TurnkeyClientError> {
     let msg: ServerTargetMsgV1 = serde_json::from_str(bundle)?;
     Ok(serde_json::from_slice(&msg.data)?)
 }
 
+#[cfg(feature = "enclave_encrypt")]
 fn exactly_one<T>(items: Vec<T>, label: &'static str) -> Result<T, TurnkeyClientError> {
     let mut iter = items.into_iter();
     let value = iter
@@ -1337,6 +1351,7 @@ mod test {
         assert_eq!(res.activity.unwrap().id, "some-activity-id".to_string());
     }
 
+    #[cfg(feature = "enclave_encrypt")]
     mod secrets {
         use super::*;
         use crate::generated::ExportSecretsRequest;
